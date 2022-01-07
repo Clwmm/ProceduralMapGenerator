@@ -5,7 +5,8 @@
 MapGenerator::roomSizeFrom  
 MapGenerator::roomSizeTo
 - You can change the number of rooms:  
-MapGenerator::noOfRooms //Min 1, Max 127 
+MapGenerator::noOfRooms //Min 1, Max 127
+- Always set the MapGenerator::moveRandomRoom value less than MapGenerator::roomSizeFrom
 
 
 ## Controls
