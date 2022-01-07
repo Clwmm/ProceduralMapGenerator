@@ -13,4 +13,5 @@ With the i5-9400f, it takes about 17 seconds to generate 10,000 rooms.
 ## Controls
 - WSAD - movement
 - Q & E - zooming
+- Space - generate new map
 - ESC - exit
