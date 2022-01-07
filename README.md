@@ -11,3 +11,4 @@ MapGenerator::noOfRooms //Min 1, Max 127
 ## Controls
 - WSAD - movement
 - Q & E - zooming
+- ESC - exit
