@@ -13,6 +13,8 @@ void Game::start()
 
 	MapGenerator *map = new MapGenerator;
 
+	window->setFramerateLimit(240);
+
 	while (window->isOpen())
 	{
 		deltaTime = clock.restart().asSeconds();

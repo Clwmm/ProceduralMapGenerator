@@ -10,10 +10,10 @@ private:
 	unsigned short moveRandomRoom = 250;
 	// Must be less than roomSizeFrom
 
-	char noOfRooms = 127;
-	// Max No. of rooms = 127
+	int noOfRooms = 250;
 
-	unsigned char randomBefore, chose;
+	int randomBefore;
+	unsigned char chose;
 	int moveX, moveY;
 	sf::Vector2f beforeHalfSize, thisHalfSize, beforePosition, thisPosition;
 	sf::Vector2f position_before, sizeBefore;

@@ -26,7 +26,7 @@ MapGenerator::MapGenerator()
 {
 	srand(time(0));
 
-	for (char i = 0; i < noOfRooms; i++)
+	for (int i = 0; i < noOfRooms; i++)
 	{
 		randWidthRoom = fromRandom(roomSizeFrom, roomSizeTo);
 		randHeightRoom = fromRandom(roomSizeFrom, roomSizeTo);
