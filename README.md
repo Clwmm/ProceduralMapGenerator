@@ -1,4 +1,4 @@
-## ProceduralMapGenerator
+## ProceduralMapGenerator with SFML 2.5.1
 
 ## INFO
 - You can change size range of the rooms:  
