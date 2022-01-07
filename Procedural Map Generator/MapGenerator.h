@@ -4,11 +4,15 @@
 class MapGenerator
 {
 private:
-	unsigned short moveRandomRoom = 175;
-	unsigned short roomSizeFrom = 200;
-	unsigned short roomSizeTo = 950;
-	// Max No. of rooms = 127
+	unsigned short roomSizeFrom = 260;
+	unsigned short roomSizeTo = 1500;
+
+	unsigned short moveRandomRoom = 250;
+	// Must be less than roomSizeFrom
+
 	char noOfRooms = 127;
+	// Max No. of rooms = 127
+
 	unsigned char randomBefore, chose;
 	int moveX, moveY;
 	sf::Vector2f beforeHalfSize, thisHalfSize, beforePosition, thisPosition;

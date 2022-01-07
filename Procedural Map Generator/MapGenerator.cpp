@@ -68,6 +68,7 @@ MapGenerator::MapGenerator()
 			case 1:
 				moveX = -0.5 * (sizeBefore.x + randWidthRoom);
 				moveY = fromRandom((-0.5 * sizeBefore.y) - (0.5 * randHeightRoom) + moveRandomRoom, (0.5 * sizeBefore.y) + (0.5 * randHeightRoom) - moveRandomRoom);
+				break;
 			case 2:
 				moveX = fromRandom((-0.5 * sizeBefore.x) - (0.5 * randWidthRoom) + moveRandomRoom, (0.5 * sizeBefore.x) + (0.5 * randWidthRoom) - moveRandomRoom);
 				moveY = 0.5 * (sizeBefore.y + randHeightRoom);
