@@ -2,8 +2,8 @@
 
 ## INFO
 - You can change size range of the rooms:
-MapGenerator::roomSizeFrom
-MapGenerator::roomSizeTo
+/MapGenerator::roomSizeFrom
+/MapGenerator::roomSizeTo
 - You can change the number of rooms:
 MapGenerator::noOfRooms //Min 1, Max 127 
 
