@@ -8,6 +8,7 @@ Game::Game(sf::RenderWindow& _window)
 
 void Game::start()
 {
+	restart = false;
 	sf::View view(sf::Vector2f(0, 0), sf::Vector2f(window->getSize().x,window->getSize().y));
 	sf::Event event;
 
@@ -32,7 +33,17 @@ void Game::start()
 					window->close();
 					break;
 				}
+				if (event.key.code == sf::Keyboard::Space)
+				{
+					restart = true;
+					break;
+				}
 			}
+		}
+		if (restart)
+		{
+			map->rooms.clear();
+			break;
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))

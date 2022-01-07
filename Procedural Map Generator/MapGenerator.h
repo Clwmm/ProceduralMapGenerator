@@ -18,11 +18,11 @@ private:
 	sf::Vector2f beforeHalfSize, thisHalfSize, beforePosition, thisPosition;
 	sf::Vector2f position_before, sizeBefore;
 	int randWidthRoom, randHeightRoom;
-	std::list<sf::RectangleShape*> rooms;
 private:
 	int fromRandom(int a, int b);
 	bool checkCollision(sf::Vector2f beforePosition, sf::Vector2f beforeHalfSize, sf::Vector2f thisPosition, sf::Vector2f thisHalfSize);
 public:
+	std::list<sf::RectangleShape*> rooms;
 	MapGenerator();
 	void draw(sf::RenderWindow& window);
 };
