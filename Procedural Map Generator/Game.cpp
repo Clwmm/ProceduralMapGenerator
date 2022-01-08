@@ -55,9 +55,9 @@ void Game::start()
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
 			view.move(-speed * deltaTime, 0);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E))
-			view.zoom(1.01);
+			view.zoom(1 + (2 * deltaTime));
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q))
-			view.zoom(0.99);
+			view.zoom(1 - (2 * deltaTime));
 
 		window->clear();
 		window->setView(view);
