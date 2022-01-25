@@ -16,4 +16,10 @@ With the i5-9400f, it takes about 17 seconds to generate 10,000 rooms.
 - Space - generate new map
 - ESC - exit
 
-![RoomSizeFrom: 450, roomSizeTo: 900, distanceBetween: 100, moveRandomRoom: 100, noOfRooms: 250](https://github.com/Clwmm/ProceduralMapGenerator/blob/master/Procedural%20Map%20Generator/res/450%3B900%3B100%3B100%3B250.png)
+## Sample Maps:
+- RoomSizeFrom: 450
+- roomSizeTo: 900
+- distanceBetween: 100
+- moveRandomRoom: 100
+- noOfRooms: 250
+![Photo](https://github.com/Clwmm/ProceduralMapGenerator/blob/master/Procedural%20Map%20Generator/res/450%3B900%3B100%3B100%3B250.png)
