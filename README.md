@@ -8,7 +8,7 @@ MapGenerator::roomSizeTo
 MapGenerator::distanceBetween
 - You can change the number of rooms:  
 MapGenerator::noOfRooms //Min 1  
-With the i5-9400f, it takes about 17 seconds to generate 10,000 rooms.
+With the i5-9400f, it takes about 15 seconds to generate 10,000 rooms.
 - Always set the MapGenerator::moveRandomRoom value less than or egual to MapGenerator::roomSizeFrom
 
 

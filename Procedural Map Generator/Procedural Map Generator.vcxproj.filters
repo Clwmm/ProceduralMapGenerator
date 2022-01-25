@@ -35,7 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
-    <None Include="res\Procedural Map Generator x64.exe">
+    <None Include="Procedural Map Generator x64.exe">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

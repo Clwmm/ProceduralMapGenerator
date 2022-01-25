@@ -161,7 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
-    <None Include="res\Procedural Map Generator x64.exe" />
+    <None Include="Procedural Map Generator x64.exe" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\450%3b900%3b100%3b100%3b250.png" />
