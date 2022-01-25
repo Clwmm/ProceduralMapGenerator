@@ -161,6 +161,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+    <None Include="res\Procedural Map Generator x64.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\450%3b900%3b100%3b100%3b250.png" />
+    <Image Include="res\600%3b1500%3b0%3b50%3b250.png" />
+    <Image Include="res\700%3b900%3b150%3b75%3b250.png" />
+    <Image Include="res\900%3b900%3b0%3b900%3b250.png" />
+    <Image Include="res\900%3b900%3b350%3b900%3b250.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

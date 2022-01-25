@@ -54,19 +54,19 @@ MapGenerator::MapGenerator()
 			chose = rand() % 4;
 			switch (chose)
 			{
-			case 0:
+			case 0: // gernerate on TOP of the previous one
 				moveX = fromRandom((-0.5 * sizeBefore.x) - (0.5 * randWidthRoom) + moveRandomRoom, (0.5 * sizeBefore.x) + (0.5 * randWidthRoom) - moveRandomRoom);
 				moveY = -0.5 * (static_cast<long long>(sizeBefore.y) + static_cast<long long>(randHeightRoom)) - distanceBetween;
 				break;
-			case 1:
+			case 1: // LEFT
 				moveX = -0.5 * (static_cast<long long>(sizeBefore.x) + static_cast<long long>(randWidthRoom)) - distanceBetween;
 				moveY = fromRandom((-0.5 * sizeBefore.y) - (0.5 * randHeightRoom) + moveRandomRoom, (0.5 * sizeBefore.y) + (0.5 * randHeightRoom) - moveRandomRoom);
 				break;
-			case 2:
+			case 2: // BOTTOM
 				moveX = fromRandom((-0.5 * sizeBefore.x) - (0.5 * randWidthRoom) + moveRandomRoom, (0.5 * sizeBefore.x) + (0.5 * randWidthRoom) - moveRandomRoom);
 				moveY = 0.5 * (static_cast<long long>(sizeBefore.y) + static_cast<long long>(randHeightRoom)) + distanceBetween;
 				break;
-			case 3:
+			case 3: // RIGHT
 				moveX = 0.5 * (static_cast<long long>(sizeBefore.x) + static_cast<long long>(randWidthRoom)) + distanceBetween;
 				moveY = fromRandom((-0.5 * sizeBefore.y) - (0.5 * randHeightRoom) + moveRandomRoom, (0.5 * sizeBefore.y) + (0.5 * randHeightRoom) - moveRandomRoom);
 				break;
@@ -80,7 +80,7 @@ MapGenerator::MapGenerator()
 			{
 				beforeHalfSize = c->getSize() / 2.0f;
 				beforePosition = c->getPosition();
-				if (checkCollision(beforePosition, beforeHalfSize, thisPosition, thisHalfSize))
+				if (checkCollision(beforePosition, beforeHalfSize, thisPosition, sf::Vector2f(thisHalfSize.x + distanceBetween, thisHalfSize.y + distanceBetween)))
 				{
 					i--;
 					colision = true;

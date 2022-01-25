@@ -4,12 +4,12 @@
 class MapGenerator
 {
 private:
-	unsigned short roomSizeFrom = 900;
+	unsigned short roomSizeFrom = 700;
 	unsigned short roomSizeTo = 900;
 
-	unsigned short distanceBetween = 0;
+	unsigned short distanceBetween = 150;
 
-	unsigned short moveRandomRoom = 900;
+	unsigned short moveRandomRoom = 75;
 	// Must be less than roomSizeFrom
 
 	int noOfRooms = 250;
