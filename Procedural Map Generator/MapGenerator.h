@@ -1,13 +1,15 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <list>
+#include <vector>
 class MapGenerator
 {
 private:
-	unsigned short roomSizeFrom = 260;
-	unsigned short roomSizeTo = 1500;
+	unsigned short roomSizeFrom = 900;
+	unsigned short roomSizeTo = 900;
 
-	unsigned short moveRandomRoom = 250;
+	unsigned short distanceBetween = 0;
+
+	unsigned short moveRandomRoom = 900;
 	// Must be less than roomSizeFrom
 
 	int noOfRooms = 250;
@@ -22,8 +24,9 @@ private:
 	int fromRandom(int a, int b);
 	bool checkCollision(sf::Vector2f beforePosition, sf::Vector2f beforeHalfSize, sf::Vector2f thisPosition, sf::Vector2f thisHalfSize);
 public:
-	std::list<sf::RectangleShape*> rooms;
+	std::vector<sf::RectangleShape*> rooms;
 	MapGenerator();
+	~MapGenerator();
 	void draw(sf::RenderWindow& window);
 };
 

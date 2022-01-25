@@ -44,17 +44,10 @@ MapGenerator::MapGenerator()
 			break;
 		default:
 			randomBefore = rand() % i;
-			int b = 0;
-			for (auto c : rooms)
-			{
-				if (b == randomBefore)
-				{
-					position_before = c->getPosition();
-					sizeBefore = c->getSize();
-					break;
-				}
-				b++;
-			}
+
+			position_before = rooms[randomBefore]->getPosition();
+			sizeBefore = rooms[randomBefore]->getSize();
+			
 			a->setFillColor(sf::Color(fromRandom(0, 255), fromRandom(0, 255), fromRandom(0, 255)));
 			a->setPosition(position_before);
 
@@ -63,18 +56,18 @@ MapGenerator::MapGenerator()
 			{
 			case 0:
 				moveX = fromRandom((-0.5 * sizeBefore.x) - (0.5 * randWidthRoom) + moveRandomRoom, (0.5 * sizeBefore.x) + (0.5 * randWidthRoom) - moveRandomRoom);
-				moveY = -0.5 * (sizeBefore.y + randHeightRoom);
+				moveY = -0.5 * (static_cast<long long>(sizeBefore.y) + static_cast<long long>(randHeightRoom)) - distanceBetween;
 				break;
 			case 1:
-				moveX = -0.5 * (sizeBefore.x + randWidthRoom);
+				moveX = -0.5 * (static_cast<long long>(sizeBefore.x) + static_cast<long long>(randWidthRoom)) - distanceBetween;
 				moveY = fromRandom((-0.5 * sizeBefore.y) - (0.5 * randHeightRoom) + moveRandomRoom, (0.5 * sizeBefore.y) + (0.5 * randHeightRoom) - moveRandomRoom);
 				break;
 			case 2:
 				moveX = fromRandom((-0.5 * sizeBefore.x) - (0.5 * randWidthRoom) + moveRandomRoom, (0.5 * sizeBefore.x) + (0.5 * randWidthRoom) - moveRandomRoom);
-				moveY = 0.5 * (sizeBefore.y + randHeightRoom);
+				moveY = 0.5 * (static_cast<long long>(sizeBefore.y) + static_cast<long long>(randHeightRoom)) + distanceBetween;
 				break;
 			case 3:
-				moveX = 0.5 * (sizeBefore.x + randWidthRoom);
+				moveX = 0.5 * (static_cast<long long>(sizeBefore.x) + static_cast<long long>(randWidthRoom)) + distanceBetween;
 				moveY = fromRandom((-0.5 * sizeBefore.y) - (0.5 * randHeightRoom) + moveRandomRoom, (0.5 * sizeBefore.y) + (0.5 * randHeightRoom) - moveRandomRoom);
 				break;
 			}
@@ -82,7 +75,7 @@ MapGenerator::MapGenerator()
 			
 			thisHalfSize = a->getSize() / 2.0f;
 			thisPosition = a->getPosition();
-			char d = 0;
+			bool colision = false;
 			for (auto c : rooms)
 			{
 				beforeHalfSize = c->getSize() / 2.0f;
@@ -90,16 +83,23 @@ MapGenerator::MapGenerator()
 				if (checkCollision(beforePosition, beforeHalfSize, thisPosition, thisHalfSize))
 				{
 					i--;
-					d = 1;
+					colision = true;
 					delete a;
 					break;
 				}
 			}
-			if (d == 1)
+			if (colision)
 				break;
 			rooms.push_back(a);
 		}
 	}
+}
+
+MapGenerator::~MapGenerator()
+{
+	for (auto i = rooms.begin(); i != rooms.end();)
+		i = rooms.erase(i);
+	rooms.clear();
 }
 
 void MapGenerator::draw(sf::RenderWindow& window)
