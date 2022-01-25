@@ -28,16 +28,17 @@ MapGenerator::MapGenerator()
 
 	for (int i = 0; i < noOfRooms; i++)
 	{
-		randWidthRoom = fromRandom(roomSizeFrom, roomSizeTo);
-		randHeightRoom = fromRandom(roomSizeFrom, roomSizeTo);
-
 		sf::RectangleShape *a = new sf::RectangleShape;
-		a->setSize(sf::Vector2f(randWidthRoom, randHeightRoom));
-		a->setOrigin(randWidthRoom / 2, randHeightRoom / 2);
-
+		
 		switch (i)
 		{
 		case 0:
+			randWidthRoom = fromRandom(roomSizeFrom, roomSizeTo);
+			randHeightRoom = fromRandom(roomSizeFrom, roomSizeTo);
+
+			a->setSize(sf::Vector2f(randWidthRoom, randHeightRoom));
+			a->setOrigin(randWidthRoom / 2, randHeightRoom / 2);
+
 			a->setFillColor(sf::Color::White);
 			a->setPosition(0, 0);
 			rooms.push_back(a);
@@ -46,6 +47,12 @@ MapGenerator::MapGenerator()
 			bool generated = false;
 			while (!generated)
 			{
+				randWidthRoom = fromRandom(roomSizeFrom, roomSizeTo);
+				randHeightRoom = fromRandom(roomSizeFrom, roomSizeTo);
+
+				a->setSize(sf::Vector2f(randWidthRoom, randHeightRoom));
+				a->setOrigin(randWidthRoom / 2, randHeightRoom / 2);
+
 				randomBefore = rand() % i;
 
 				position_before = rooms[randomBefore]->getPosition();
