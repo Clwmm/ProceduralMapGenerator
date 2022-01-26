@@ -9,7 +9,7 @@ MapGenerator::distanceBetween
 - You can change the number of rooms:  
 MapGenerator::noOfRooms //Min 1
 - You can change maximum deflection:  
-MapGenerator::moveRandomRoom
+MapGenerator::moveRandomRoom  
 With the i5-9400f, it takes about 15 seconds to generate 10,000 rooms.
 
 
